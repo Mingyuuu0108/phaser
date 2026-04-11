@@ -3,8 +3,8 @@ import { homePortals } from "./homePortalData";
 
 const homeMapData = {
 
-    width: 600,
-    height: 400,
+    width: 800,
+    height: 600,
 
     background: 0x88aaff,
 

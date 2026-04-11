@@ -57,6 +57,11 @@ export default class Player {
             vy = this.speed;
 
         this.body.setVelocity(vx, vy);
+
+        // DEV - 좌표 로그 
+        if (vx !== 0 || vy !== 0) {
+            console.log(`x: ${Math.floor(this.sprite.x)}, y: ${Math.floor(this.sprite.y)}`);
+        }
     }
 
     stop() {

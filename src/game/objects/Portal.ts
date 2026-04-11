@@ -42,13 +42,7 @@ export default class Portal {
 
                 scene.player.stop();
 
-                scene.scene.start(
-                    targetScene,
-                    {
-                        spawnX, 
-                        spawnY
-                    }
-                );
+                scene.scene.start(targetScene, { spawnX, spawnY });
             }
         );
     }

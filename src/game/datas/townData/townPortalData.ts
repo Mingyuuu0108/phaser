@@ -1,13 +1,13 @@
 export const townPortals= [
     {
         x: 400,
-        y: 250,
-        width: 120,
-        height: 120,
+        y: 320,
+        width: 10,
+        height: 10,
 
-        target: "HouseScene",
+        target: "HomeScene",
 
         spawnX: 300,
-        spawnY: 300
+        spawnY: 420
     }
 ];

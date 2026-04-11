@@ -8,7 +8,6 @@ export const homePortals = [
         target: "TownScene",
 
         spawnX: 400,
-        spawnY: 320
+        spawnY: 360
     }
-
 ];

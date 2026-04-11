@@ -32,10 +32,8 @@ export default class BaseScene extends Phaser.Scene {
     }
 
     init(data: any) {
-        if (data.x !== undefined || data.y !== undefined) {
-            this.spawnX = data.x;
-            this.spawnY = data.y;
-        }
+        this.spawnX = data.spawnX ?? undefined;
+        this.spawnY = data.spawnY ?? undefined;
     }
 
     create() {
@@ -57,8 +55,8 @@ export default class BaseScene extends Phaser.Scene {
 
         this.player = new Player(
             this,
-            this.spawnX || 100,
-            this.spawnY || 100,
+            this.spawnX ?? 100,
+            this.spawnY ?? 100,
             this.cursors
         );
 

@@ -9,15 +9,6 @@ export const townBuildings = [
     {
         x: 650,
         y: 250
-    },
-
-    {
-        x: 900,
-        y: 250
-    },
-    {
-        x: 800,
-        y: 500
     }
 ];
 
