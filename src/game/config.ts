@@ -3,7 +3,7 @@ import Phaser from "phaser";
 export const gameConfig: Phaser.Types.Core.GameConfig = {
 
     type: Phaser.AUTO,
-    
+
     width: 800,
     height: 600,
 
@@ -24,6 +24,6 @@ export const gameConfig: Phaser.Types.Core.GameConfig = {
     },
 
     scene: [
-
+        
     ]
 };

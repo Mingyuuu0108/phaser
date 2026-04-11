@@ -1,7 +1,7 @@
 import { homeNPCs } from "./homeNPCData";
 import { homePortals } from "./homePortalData";
 
-const homeMap = {
+const homeMapData = {
 
     width: 600,
     height: 400,
@@ -13,4 +13,4 @@ const homeMap = {
     portals: homePortals
 };
 
-export default homeMap;
+export default homeMapData;

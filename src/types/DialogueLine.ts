@@ -1,5 +1,5 @@
-export type Dialogue = {
-    
+export type DialogueLine = {
+
     speaker: "npc" | "player";
 
     name: string;
