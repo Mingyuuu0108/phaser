@@ -2,32 +2,28 @@ import Phaser from "phaser";
 
 export const gameConfig: Phaser.Types.Core.GameConfig = {
 
-  type: Phaser.AUTO,
+    type: Phaser.AUTO,
+    
+    width: 800,
+    height: 600,
 
-  width: 800,
-  height: 600,
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    },
 
-  scale: {
+    input: {
+        keyboard: true
+    },
 
-    mode: Phaser.Scale.FIT,
+    physics: {
+        default: "arcade",
+        arcade: {
+            debug: true
+        }
+    },
 
-    autoCenter: Phaser.Scale.CENTER_BOTH
+    scene: [
 
-  },
-
-  input: {
-    keyboard: true
-  },
-
-
-  physics: {
-    default: "arcade",
-    arcade: {
-      debug: true
-    }
-  },
-
-  scene: [
-  ]
-
+    ]
 };
