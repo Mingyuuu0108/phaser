@@ -62,6 +62,5 @@ export default class HUDSystem {
         const hpRatio = hp / maxHp;
         this.hpBar.width = this.BAR_WIDTH * hpRatio;
         this.hpText.setText(`HP ${hp} / ${maxHp}`);
-
     }
 }

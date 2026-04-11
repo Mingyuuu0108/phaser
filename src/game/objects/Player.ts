@@ -1,5 +1,7 @@
 import * as Phaser from "phaser";
 import StatSystem from "../systems/StatSystem";
+import InventorySystem from "../systems/InventorySystem";
+import type GameManager from "../systems/GameManager";
 
 export default class Player {
     scene: Phaser.Scene;
@@ -9,6 +11,7 @@ export default class Player {
     cursors: Phaser.Types.Input.Keyboard.CursorKeys;
 
     stats: StatSystem;
+    inventory: InventorySystem;
 
     speed = 200;
     canMove = true;
@@ -17,7 +20,8 @@ export default class Player {
         scene: Phaser.Scene,
         x: number,
         y: number,
-        cursors: Phaser.Types.Input.Keyboard.CursorKeys
+        cursors: Phaser.Types.Input.Keyboard.CursorKeys,
+        gameManager: GameManager
     ) {
 
         this.scene = scene;
@@ -37,6 +41,7 @@ export default class Player {
         this.body.setCollideWorldBounds(true);
 
         this.stats = new StatSystem();
+        this.inventory = new InventorySystem(scene, this.stats, gameManager);
     }
 
     update() {
