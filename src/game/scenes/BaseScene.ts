@@ -121,6 +121,11 @@ export default class BaseScene extends Phaser.Scene {
         buildingConfigs.forEach(data => {
             const building = new Building(this, data);
             this.buildings.push(building);
+
+            // this.physics.add.collider(
+            //     this.player.sprite,
+            //     building.collider
+            // );
         });
     }
 

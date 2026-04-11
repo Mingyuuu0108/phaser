@@ -1,5 +1,6 @@
 import * as Phaser from "phaser";
 
+import BootScene from "./scenes/BootScene";
 import HomeScene from "./scenes/HomeScene";
 import TownScene from "./scenes/TownScene";
 
@@ -26,6 +27,7 @@ export const gameConfig: Phaser.Types.Core.GameConfig = {
     },
 
     scene: [
+        BootScene,
         HomeScene,
         TownScene
     ]
