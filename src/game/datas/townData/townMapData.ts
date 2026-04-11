@@ -3,9 +3,10 @@ import { townNPCs } from "./townNPCData";
 import { townPortals } from "./townPortalData";
 
 const townMapData = {
+    name: "시작의 마을",
 
-    width: 800,
-    height: 500,
+    width: 1200,
+    height: 600,
 
     background: 0x55aa55,
 

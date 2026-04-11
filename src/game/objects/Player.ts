@@ -1,4 +1,5 @@
 import * as Phaser from "phaser";
+import StatSystem from "../systems/StatSystem";
 
 export default class Player {
     scene: Phaser.Scene;
@@ -6,6 +7,8 @@ export default class Player {
     body!: Phaser.Physics.Arcade.Body;
 
     cursors: Phaser.Types.Input.Keyboard.CursorKeys;
+
+    stats: StatSystem;
 
     speed = 200;
     canMove = true;
@@ -32,6 +35,8 @@ export default class Player {
         this.body = this.sprite.body as Phaser.Physics.Arcade.Body;
 
         this.body.setCollideWorldBounds(true);
+
+        this.stats = new StatSystem();
     }
 
     update() {

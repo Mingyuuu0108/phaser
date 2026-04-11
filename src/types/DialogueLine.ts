@@ -1,4 +1,4 @@
-export type DialogueLine = {
+export interface DialogueLine {
     speaker: "npc" | "player";
 
     name: string;

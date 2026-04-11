@@ -8,11 +8,15 @@ import Building from "../objects/Building";
 import Portal from "../objects/Portal";
 
 import DialogueSystem from "../systems/DialogueSystem";
+import HUDSystem from "../systems/HUDSystem";
+import MapNameSystem from "../systems/MapNameSystem";
 
 export default class BaseScene extends Phaser.Scene {
     player!: Player;
 
     dialogue!: DialogueSystem;
+    hud!: HUDSystem;
+    mapName!: MapNameSystem;
 
     npcs: NPC[] = [];
     buildings: Building[] = [];
@@ -69,6 +73,10 @@ export default class BaseScene extends Phaser.Scene {
             this.player
         );
 
+        this.hud = new HUDSystem(this, this.player.stats);
+
+        this.mapName = new MapNameSystem(this);
+
         this.zKey = this.input.keyboard!.addKey(Phaser.Input.Keyboard.KeyCodes.Z);
 
         this.time.delayedCall(0, () => {
@@ -85,6 +93,8 @@ export default class BaseScene extends Phaser.Scene {
             console.error("Map not found:", mapKey );
             return;
         }
+
+        this.mapName.show(map.name);
 
         this.mapWidth = map.width;
         this.mapHeight = map.height;
@@ -204,5 +214,6 @@ export default class BaseScene extends Phaser.Scene {
     update() {
         if (this.player) this.player.update();
         if (this.zKey) this.checkInteraction();
+        if (this.hud) this.hud.update();
     }
 }
