@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+import * as Phaser from "phaser";
 import Player from "../objects/Player";
 import type { DialogueLine } from "../../types/DialogueLine";
 
@@ -99,7 +99,7 @@ export default class DialogueSystem {
         this.isTalking = true;
 
         this.player.setMovable(false);
-        
+
         this.dialogueBox.setVisible(true);
         this.nameText.setVisible(true);
         this.dialogueText.setVisible(true);

@@ -1,5 +1,4 @@
-import Phaser from "phaser";
-
+import * as Phaser from "phaser";
 import BaseScene from "../scenes/BaseScene";
 
 export default class Building {

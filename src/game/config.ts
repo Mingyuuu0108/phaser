@@ -1,4 +1,7 @@
-import Phaser from "phaser";
+import * as Phaser from "phaser";
+
+import HomeScene from "./scenes/HomeScene";
+import TownScene from "./scenes/TownScene";
 
 export const gameConfig: Phaser.Types.Core.GameConfig = {
     type: Phaser.AUTO,
@@ -23,6 +26,7 @@ export const gameConfig: Phaser.Types.Core.GameConfig = {
     },
 
     scene: [
-
+        HomeScene,
+        TownScene
     ]
 };
