@@ -1,6 +1,6 @@
 import * as Phaser from "phaser";
 
-import { maps } from "../datas";
+import { maps } from "../datas/mapDatas";
 
 import Player from "../objects/Player";
 import NPC from "../objects/NPC";
