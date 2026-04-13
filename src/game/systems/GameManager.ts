@@ -1,4 +1,4 @@
-export interface Pausable {
+interface Pausable {
     stop(): void;
     resume(): void;
 }

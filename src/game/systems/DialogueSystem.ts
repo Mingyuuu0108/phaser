@@ -6,14 +6,14 @@ export default class DialogueSystem {
     scene: Phaser.Scene;
     player: Player;
 
-    // Dialogue UI
+    // 대화창 UI
     dialogueBox!: Phaser.GameObjects.Rectangle;
     dialogueText!: Phaser.GameObjects.Text;
     nameText!: Phaser.GameObjects.Text;
     portraitLeft!: Phaser.GameObjects.Image;
     portraitRight!: Phaser.GameObjects.Image;
 
-    // Dialogue Data
+    // 대화창 Data
     dialogues: DialogueLine[] = [];
     dialogueIndex = 0;
     isTalking = false;
@@ -30,7 +30,7 @@ export default class DialogueSystem {
     createUI() {
         const cam = this.scene.cameras.main;
 
-        // Dialogue - 박스
+        // 대화창 - 박스
         this.dialogueBox = this.scene.add.rectangle(
             cam.width / 2,
             cam.height - 100,
@@ -43,7 +43,7 @@ export default class DialogueSystem {
         .setDepth(1000)
         .setVisible(false);
         
-        // Dialogue - 이름
+        // 대화창 - 화자 이름
         this.nameText = this.scene.add.text(
             this.dialogueBox.x - this.dialogueBox.width / 2 + 20,
             this.dialogueBox.y - this.dialogueBox.height / 2 + 5,
@@ -57,7 +57,7 @@ export default class DialogueSystem {
         .setDepth(1001)
         .setVisible(false);
 
-        // Dialogue - 대사
+        // 대화창 - 대사
         this.dialogueText = this.scene.add.text(
             this.dialogueBox.x - this.dialogueBox.width / 2 + 20,
             this.dialogueBox.y - this.dialogueBox.height / 2 + 30,
@@ -72,7 +72,7 @@ export default class DialogueSystem {
         .setDepth(1001)
         .setVisible(false);
 
-        // Dialogue - 왼쪽 초상화
+        // 대화창 - 왼쪽 초상화
         this.portraitLeft = this.scene.add.image(
             100,
             cam.height - 200,
@@ -82,7 +82,7 @@ export default class DialogueSystem {
         .setDepth(999)
         .setVisible(false);
 
-        // Dialogue - 오른쪽 초상화
+        // 대화창 - 오른쪽 초상화
         this.portraitRight = this.scene.add.image(
             cam.width - 100,
             cam.height - 200,

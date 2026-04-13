@@ -15,7 +15,7 @@ export default class Player {
     stats: StatSystem;
     inventory: InventorySystem;
 
-    speed = 100;
+    speed = 200;
     canMove = true;
 
     private direction: Direction = "down";

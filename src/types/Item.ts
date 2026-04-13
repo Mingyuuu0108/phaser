@@ -1,3 +1,4 @@
+// 아이템 - 소비, 장비, 기타
 export type ItemType = "consumable" | "equipment" | "misc";
 
 export type EquipmentSlot = "weapon" | "armor";
@@ -25,7 +26,7 @@ export interface EquipmentItem extends BaseItem {
     maxHpBonus?: number;
 }
 
-// 기타 아이템 (퀘스트 등)
+// 기타 아이템
 export interface MiscItem extends BaseItem {
     type: "misc";
 }

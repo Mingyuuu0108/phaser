@@ -10,6 +10,8 @@ export default class StatSystem {
 
             attack: 10,
             defense: 5,
+
+            gold: 0
         };
     }
 

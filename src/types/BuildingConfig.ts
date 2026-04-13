@@ -1,3 +1,4 @@
+// 건물 구성 - 위치(x, y), 넓이(w, h), 벽높이(wall height), 컬러
 export interface BuildingConfig {
     x: number;
     y: number;

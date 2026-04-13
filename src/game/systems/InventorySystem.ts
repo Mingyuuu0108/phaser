@@ -155,8 +155,6 @@ export default class InventorySystem {
         this.isOpen ? this.hide() : this.open();
     }
 
-    // ── 업데이트 (BaseScene.update에서 호출) ────────────
-
     update() {
         if (!this.isOpen) return;
 
@@ -182,9 +180,11 @@ export default class InventorySystem {
         if (Phaser.Input.Keyboard.JustDown(this.enterKey)) {
             this.useSelected();
         }
-    }
 
-    // ── 렌더 ───────────────────────────────────────────
+        if (Phaser.Input.Keyboard.JustDown(this.xKey)) {
+            //
+        }
+    }
 
     private renderList() {
         this.renderGroup.clear(true, true);
