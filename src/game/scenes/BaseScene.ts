@@ -3,9 +3,12 @@ import * as Phaser from "phaser";
 import { maps } from "../datas/mapDatas";
 
 import Player from "../objects/Player";
-import NPC from "../objects/NPC";
 import Building from "../objects/Building";
 import Portal from "../objects/Portal";
+
+import NPC from "../objects/NPC";
+import TalkNPC from "../objects/npcs/TalkNPC";
+import EnemyNPC from "../objects/npcs/EnemyNPC";
 
 import GameManager from "../systems/GameManager";
 import DialogueSystem from "../systems/DialogueSystem";
@@ -111,8 +114,14 @@ export default class BaseScene extends Phaser.Scene {
     }
 
     createNPCs(npcConfigs: any[]) {
-        npcConfigs.forEach(data => {
-            const npc = new NPC(this, data.x, data.y, data.dialogues);
+        npcConfigs.forEach(config => {
+            let npc: NPC;
+
+            switch (config.type) {
+                case "talk": npc = new TalkNPC(this, config); break;
+                case "enemy": npc = new EnemyNPC(this, config); break;
+                default: npc = new NPC(this, config);
+            }
             this.npcs.push(npc);
         });
     }

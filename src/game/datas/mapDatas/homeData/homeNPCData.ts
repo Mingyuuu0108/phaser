@@ -1,8 +1,18 @@
-export const homeNPCs = [
+import type { TalkNPCConfig } from "../../../../types/NPC";
+
+export const homeNPCs: (TalkNPCConfig)[] = [
     {
+        id: "old_man",
+        type: "talk",
+        name: "노인",
+        textureKey: "npc_rogue_idle",
+        animKey: "npc_rogue_idle",
+        frameWidth: 32,
+        frameHeight: 32,
+        frameCount: 4,
+        scale: 2,
         x: 200,
         y: 150,
-        npc_type: "guide_merchant",
         dialogues: [
             { speaker: "npc", name: "상인", text: "어이쿠, 처음 보는 얼굴이군요! 이 마을은 처음이신가요?" },
             { speaker: "player", name: "바케샤", text: "네, 방금 도착했습니다. 여기선 어떻게 움직여야 하죠?" },
@@ -13,6 +23,15 @@ export const homeNPCs = [
         ]
     },
     {
+        id: "old_man",
+        type: "talk",
+        name: "노인",
+        textureKey: "npc_rogue_idle",
+        animKey: "npc_rogue_idle",
+        frameWidth: 32,
+        frameHeight: 32,
+        frameCount: 4,
+        scale: 2,
         x: 300,
         y: 300,
         dialogues: [

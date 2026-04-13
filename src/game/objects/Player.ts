@@ -3,11 +3,9 @@ import StatSystem from "../systems/StatSystem";
 import InventorySystem from "../systems/InventorySystem";
 import GameManager from "../systems/GameManager";
 
-type Direction = "down" | "up" | "side";
-
 export default class Player {
     scene: Phaser.Scene;
-    sprite: Phaser.GameObjects.Sprite;  // Rectangle → Sprite
+    sprite: Phaser.GameObjects.Sprite;
     body!: Phaser.Physics.Arcade.Body;
 
     cursors: Phaser.Types.Input.Keyboard.CursorKeys;
@@ -18,7 +16,7 @@ export default class Player {
     speed = 200;
     canMove = true;
 
-    private direction: Direction = "down";
+    private direction: "down" | "up" | "side" = "down";
     private isMoving = false;
 
     constructor(
@@ -28,36 +26,36 @@ export default class Player {
         cursors: Phaser.Types.Input.Keyboard.CursorKeys,
         gameManager: GameManager
     ) {
+        this.sprite = scene.add.sprite(x, y, "player_idle_down");
+
         this.scene = scene;
         this.cursors = cursors;
 
-        // 스프라이트 생성
-        this.sprite = scene.add.sprite(x, y, "player_idle_down");
-        this.sprite.setScale(1.5);
+        this.stats = new StatSystem();
+        this.inventory = new InventorySystem(this.scene, this.stats, gameManager);
 
-        // 물리 적용
-        scene.physics.add.existing(this.sprite);
+        this.createAnimations();
+        this.createSprite();
+    }
+
+    private createSprite() {
+        this.sprite.setScale(2);
+
+        this.scene.physics.add.existing(this.sprite);
         this.body = this.sprite.body as Phaser.Physics.Arcade.Body;
         this.body.setCollideWorldBounds(true);
 
-        // 충돌 박스를 발 부분으로 줄임 (쯔꾸르식)
         this.body.setSize(20, 16);
         this.body.setOffset(22, 44);
 
-        this.stats = new StatSystem();
-        this.inventory = new InventorySystem(scene, this.stats, gameManager);
-
-        this.createAnimations();
         this.sprite.play("idle_down");
     }
 
     private createAnimations() {
         const anims = this.scene.anims;
 
-        // 이미 등록된 경우 스킵
         if (anims.exists("walk_down")) return;
 
-        // Walk 애니메이션 (6프레임)
         anims.create({
             key: "walk_down",
             frames: anims.generateFrameNumbers("player_walk_down", { start: 0, end: 5 }),
@@ -77,7 +75,6 @@ export default class Player {
             repeat: -1
         });
 
-        // Idle 애니메이션 (4프레임)
         anims.create({
             key: "idle_down",
             frames: anims.generateFrameNumbers("player_idle_down", { start: 0, end: 3 }),
@@ -111,7 +108,7 @@ export default class Player {
         if (this.cursors.left?.isDown) {
             vx = -this.speed;
             this.direction = "side";
-            this.sprite.setFlipX(true);   // 좌우 반전
+            this.sprite.setFlipX(true);
         } else if (this.cursors.right?.isDown) {
             vx = this.speed;
             this.direction = "side";

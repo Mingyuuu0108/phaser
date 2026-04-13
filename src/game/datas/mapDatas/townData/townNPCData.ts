@@ -1,18 +1,42 @@
-export const townNPCs = [
+import type { TalkNPCConfig, EnemyNPCConfig } from "../../../../types/NPC";
+import { allItems } from "../../itemDatas";
+
+export const townNPCs: (TalkNPCConfig | EnemyNPCConfig)[] = [
     {
-        x: 500,
-        y: 500,
+        id: "old_man",
+        type: "talk",
+        name: "노인",
+        textureKey: "npc_rogue_idle",
+        animKey: "npc_rogue_idle",
+        frameWidth: 32,
+        frameHeight: 32,
+        frameCount: 4,
+        scale: 2,
+        x: 200,
+        y: 200,
         dialogues: [
-            { speaker: "npc", name: "마을 주민", text: "안녕하세요. 우리 마을은 참 평화로운 곳이죠?" },
-            { speaker: "npc", name: "마을 주민", text: "바쁜 여행길이시겠지만, 가끔은 분수대 옆에서 쉬어가는 것도 좋답니다!" }
+            { speaker: "npc", name: "name", text: "이 마을에 온 걸 환영하네." },
         ]
     },
-    {
-        x: 1000,
-        y: 300,
-        dialogues: [
-            { speaker: "npc", name: "걱정 많은 주민", text: "안녕하세요. 혹시 마을 밖으로 나가실 생각인가요?" },
-            { speaker: "npc", name: "걱정 많은 주민", text: "요즘 북쪽 숲에서 몬스터들이 자주 목격된다고 하니 조심하세요!" }
-        ]
-    }    
+    // {
+    //     id: "skeleton_01",
+    //     type: "enemy",
+    //     name: "스켈레톤",
+    //     textureKey: "enemy_skeleton_idle",
+    //     animKey: "enemy_skeleton_idle",
+    //     frameWidth: 32,
+    //     frameHeight: 32,
+    //     frameCount: 4,
+    //     scale: 2,
+    //     x: 300,
+    //     y: 250,
+    //     hp: 50,
+    //     attack: 8,
+    //     defense: 2,
+    //     expReward: 30,
+    //     dropItems: [
+    //         { item: allItems["potion"], chance: 0.5 },
+    //         { item: allItems["old_letter"], chance: 0.2 }
+    //     ]
+    // }
 ];
