@@ -41,7 +41,6 @@ export default class NPC {
         });
     }
 
-    // 상호작용 타입 반환 (BaseScene에서 분기)
     getType() {
         return this.config.type;
     }
