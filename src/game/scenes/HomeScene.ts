@@ -9,6 +9,6 @@ export default class HomeScene extends BaseScene {
     create() {
         super.create();
 
-        this.loadMap("home");
+        this.loadMap("homeMap");
     }
 }

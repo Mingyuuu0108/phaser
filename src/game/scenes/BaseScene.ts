@@ -6,7 +6,7 @@ import Player from "../objects/Player";
 import Building from "../objects/Building";
 import Portal from "../objects/Portal";
 
-import NPC from "../objects/NPC";
+import NPC from "../objects/npcs/NPC";
 import TalkNPC from "../objects/npcs/TalkNPC";
 import EnemyNPC from "../objects/npcs/EnemyNPC";
 
@@ -32,8 +32,8 @@ export default class BaseScene extends Phaser.Scene {
     zKey!: Phaser.Input.Keyboard.Key;
     xKey!: Phaser.Input.Keyboard.Key;
 
-    mapWidth = 800;
-    mapHeight = 600;
+    mapWidth = 640;
+    mapHeight = 480;
 
     spawnX?: number;
     spawnY?: number;

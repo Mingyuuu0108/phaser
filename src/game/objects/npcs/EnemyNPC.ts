@@ -1,4 +1,4 @@
-import NPC from "../NPC";
+import NPC from "./NPC";
 import type { EnemyNPCConfig } from "../../../types/NPC";
 import type BaseScene from "../../scenes/BaseScene";
 import type Player from "../Player";

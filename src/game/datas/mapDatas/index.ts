@@ -1,7 +1,5 @@
-import townMapData from "./townData/townMapData";
-import homeMapData from "./homeData/homeMapData";
+import homeData from "./home/homeData";
 
 export const maps: Record<string, any> = {
-    town: townMapData,
-    home: homeMapData
+    homeMap: homeData
 };

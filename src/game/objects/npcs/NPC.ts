@@ -1,6 +1,6 @@
 import * as Phaser from "phaser";
-import type { BaseNPCConfig } from "../../types/NPC";
-import type { DialogueLine } from "../../types/DialogueLine";
+import type { BaseNPCConfig } from "../../../types/NPC";
+import type { DialogueLine } from "../../../types/DialogueLine";
 
 export default class NPC {
     scene: Phaser.Scene;

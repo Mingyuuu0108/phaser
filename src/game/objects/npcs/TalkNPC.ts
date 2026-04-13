@@ -1,4 +1,4 @@
-import NPC from "../NPC";
+import NPC from "./NPC";
 import type { TalkNPCConfig } from "../../../types/NPC";
 import type BaseScene from "../../scenes/BaseScene";
 
