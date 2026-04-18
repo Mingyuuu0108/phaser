@@ -88,11 +88,10 @@ export default class BaseScene extends Phaser.Scene {
         }
 
         this.mapName.show(map.name);
-
         this.mapWidth = map.width;
         this.mapHeight = map.height;
 
-        this.physics.world.setBounds(0, 0, this.mapWidth, this.mapHeight);
+        this.physics.world.setBounds(0, 0, this.mapWidth, this.mapHeight);  
         this.cameras.main.setBounds(0, 0, this.mapWidth, this.mapHeight);
 
         this.add.rectangle(
@@ -112,7 +111,7 @@ export default class BaseScene extends Phaser.Scene {
             });
         }
     }
-
+    
     createNPCs(npcConfigs: any[]) {
         npcConfigs.forEach(config => {
             let npc: NPC;
